@@ -1,0 +1,37 @@
+﻿@model FirstApp.Models.Book;
+<h3>Books</h3>
+
+<h2>@ViewBag.Header</h2>
+<table style="font-family:Arial">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                DateCreated
+            </th>
+            <th>
+                DateUpdated
+            </th>
+    <tbody>
+         @foreach (var item in ViewBag.Books)
+         {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Author</td>
+                <td>@item.DateCreated.ToString("MM/dd/yyyy")</td>
+                <td>@item.DateUpdated.ToString("MM/dd/yyyy")</td>
+
+            </tr>
+         }
+
+    </tbody>
+
+</table>
